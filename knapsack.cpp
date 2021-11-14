@@ -1,8 +1,4 @@
-#include <iostream>
 #include <bits/stdc++.h>
-#include <stdio.h>
-#include <math.h>
-#include <cmath>
 
 using namespace std;
 long long w[2002], v[2002];
