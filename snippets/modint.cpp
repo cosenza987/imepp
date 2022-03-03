@@ -35,7 +35,7 @@ struct modint {
     friend bool operator != (const modint &a, const modint b) {
         return a.x != b.x;
     }
-    friend bool oeprator == (const modint &a, const modint b) {
+    friend bool operator == (const modint &a, const modint b) {
         return a.x == b.x;
     }
     modint& operator *= (modint const& b) {
