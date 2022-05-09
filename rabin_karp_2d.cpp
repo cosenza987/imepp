@@ -37,7 +37,7 @@ void build(vector<string> &v, int a, int b) {
 ull fhash(int x1, int y1, int x2, int y2) {
     x1--; y1--;
     int dx = x2 - x1, dy = y2 - y1;
-    return (h[x2][y2] - h[x2][y1] * p[1][dy]) - (h[x1][y2] - h[x1][y1] * p[1][dy]) * p[0][dx];
+    return h[x2][y2] - h[x2][y1] * p[1][dy] - h[x1][y2] * p[0][dx] + h[x1][y1] * p[1][dy] * p[0][dx];
 }
 
 int main() {
