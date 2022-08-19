@@ -1,42 +1,36 @@
+const int mod = 1e9 + 7;
+
 struct matrix {
-    long long mat[2][2];
-    matrix() {
-        memset(mat, 0, sizeof(mat));
+    vector<vector<long long>> v;
+    int n;
+    matrix(int n_) {
+        n = n_;
+        v.assign(n, vector<long long>(n));
     }
-    matrix(long long a, long long b, long long c, long long d) {
-        mat[0][0] = a % mod;
-        mat[0][1] = b % mod;
-        mat[1][0] = c % mod;
-        mat[1][1] = d % mod;
-    }
-    matrix(const matrix& fuck) {
-        for(int i = 0; i < 2; i++) {
-            for(int j = 0; j < 2; j++) {
-                mat[i][j] = fuck.mat[i][j];
-            }
-        }
-    }
-    matrix operator*(matrix fuck) const {
-        matrix m;
-        for(int i = 0; i < 2; i++) {
-            for(int j = 0; j < 2; j++) {
-                for(int k = 0; k < 2; k++) {
-                    m.mat[i][j] = (m.mat[i][j] + mat[i][k] * fuck.mat[k][j] % mod) % mod;
+    matrix operator * (matrix b) const {
+        matrix m(n);
+        for(int i = 0; i < n; i++) {
+            for(int j = 0; j < n; j++) {
+                for(int k = 0; k < n; k++) {
+                    m.v[i][j] = (m.v[i][j] + v[i][k] * b.v[k][j] % mod) % mod;
                 }
             }
         }
         return m;
     }
-    matrix pow(long long p) const {
-        matrix res(1, 0, 0, 1);
-        matrix b = *this;
-        while(p > 0) {
-            if(p & 1ll) {
-                res = res * b;
-            }
-            p >>= 1ll;
-            b = b * b;
+    matrix operator ^ (long long x) const {
+        matrix m(n);
+        matrix base = *this;
+        for(int i = 0; i < n; i++) {
+            m.v[i][i] = 1;
         }
-        return res;
+        while(x) {
+            if(x & 1) {
+                m = (m * base);
+            }
+            x >>= 1;
+            base = (base * base);
+        }
+        return m;
     }
 };
