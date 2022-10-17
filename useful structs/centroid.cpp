@@ -33,7 +33,7 @@ struct CENTROID {
         return v;
     }
     void gen_tree(int v = 1, int p = 0) {
-        int c = centroid(v, v, dfs_sz(v););
+        int c = centroid(v, v, dfs_sz(v));
         vis[c] = true;
         par[c] = p;
         for(auto x : adj[c]) {
@@ -76,7 +76,7 @@ struct CENTROID {
                 ans += decomp(j, k);
             }
         }
-        vis[j] = false;
+        vis[c] = false;
         return ans;
     }
 };
