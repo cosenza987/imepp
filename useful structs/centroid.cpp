@@ -26,7 +26,7 @@ struct CENTROID {
     }
     int centroid(int v, int p, int size) {
         for(auto x : adj[v]) {
-            if(x != p and !vis[x] and sz[x] > n / 2) {
+            if(x != p and !vis[x] and sz[x] > size / 2) {
                 return centroid(x, v, size);
             }
         }
