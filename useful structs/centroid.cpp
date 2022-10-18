@@ -51,6 +51,8 @@ struct CENTROID {
             }
         }
     }
+    //count paths of size k in the tree
+    //if you want upto k, just change cnt to be a Fenwick Tree
     long long decomp(int i, int k) {
         int c = centroid(i, i, dfs_sz(i));
         vis[c] = true;
