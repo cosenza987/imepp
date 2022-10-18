@@ -1,9 +1,9 @@
-struct CENTROID {
+struct Centroid {
     vector<vector<int>> adj;
     vector<bool> vis;
     vector<int> par, sz;
     int n;
-    CENTROID (int n_) {
+    Centroid(int n_) {
         n = n_;
         adj.resize(n + 1); vis.resize(n + 1);
         par.resize(n + 1); sz.resize(n + 1);
