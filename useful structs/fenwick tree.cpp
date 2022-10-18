@@ -17,13 +17,13 @@ template <class T> struct FenwickTree {
         for (; r >= 0; r = (r & (r + 1)) - 1) {
             ret += fwt[r];
         }
-    return ret;
+        return ret;
     }
     T query(int l, int r) {
-    if (l > r) {
-        return 0;
-    }
-    return sum(r) - sum(l - 1);
+        if (l > r) {
+            return 0;
+        }
+        return sum(r) - sum(l - 1);
     }
     void add(int idx, T delta) {
         for (; idx < n; idx = idx | (idx + 1)) {
