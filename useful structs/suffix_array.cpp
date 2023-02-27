@@ -1,7 +1,6 @@
 struct SuffixArray {
     vector<int> sa, lcp_v;
     vector<vector<int>> cs;
-    string ss;
     int n;
  
     int add(int a, int b) { return a + b >= n ? a + b - n : a + b; }
@@ -16,7 +15,6 @@ struct SuffixArray {
             lcp_v.erase(lcp_v.begin());
         }
         sa.erase(sa.begin());
-        ss = s;
         s.pop_back();
     }
  
