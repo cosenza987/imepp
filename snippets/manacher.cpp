@@ -1,7 +1,7 @@
 // Manacher - O(n) (do navarro)
 
-// d1 -> odd : size = 2*d1[i] - 1
-// d2 -> even : size = 2*d2[i]
+// d1 -> odd : size = 2*d1[i] - 1, palindrome from i - d1[i] + 1 to i + d1[i] - 1
+// d2 -> even : size = 2*d2[i], palindrome from i - d2[i] to i + d2[i] - 1
 
 
 vector<int> d1, d2;
