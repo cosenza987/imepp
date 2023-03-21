@@ -1,5 +1,7 @@
 // if you know how to do the persistent version, then you surely know how to do the normal one, right, right????
 
+// used in https://codeforces.com/gym/104252/problem/B
+
 //Слава Україні, Героям слава
 
 #include <bits/stdc++.h>
