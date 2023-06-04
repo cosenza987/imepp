@@ -14,7 +14,7 @@ struct seg_tree {
         build(2 * p + 1, ((l + r) >> 1) + 1, r);
         st[p] = st[2 * p] + st[2 * p + 1];
     }
-    seg_tree(int n_) {
+    seg_tree(int n_ = 1) {
         n = n_;
         lz.resize(4 * n);
         st.resize(4 * n);
