@@ -1,4 +1,4 @@
-long long binexp(long long a, long long n) {
+long long binexp(long long a, long long n, int mod) {
     long long res = 1;
     while(n) {
         if(n & 1) {
