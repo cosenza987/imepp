@@ -51,17 +51,17 @@ int main() {
             cur += cnt[v[r]] * cnt[v[r]] * v[r];
             r--;
         }
-        while(l < q[i].l) {
-            cur -= cnt[v[l]] * cnt[v[l]] * v[l];
-            cnt[v[l]]--;
-            cur += cnt[v[l]] * cnt[v[l]] * v[l];
-            l++;
-        }
         while(r < q[i].r) {
             r++;
             cur -= cnt[v[r]] * cnt[v[r]] * v[r];
             cnt[v[r]]++;
             cur += cnt[v[r]] * cnt[v[r]] * v[r];
+        }
+        while(l < q[i].l) {
+            cur -= cnt[v[l]] * cnt[v[l]] * v[l];
+            cnt[v[l]]--;
+            cur += cnt[v[l]] * cnt[v[l]] * v[l];
+            l++;
         }
         ans[q[i].t] = cur;
     }
